@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run: echo $NPMRC > ui/.npmrc
       - run: sudo npm install -g yarn
-      - run: cd ui && sudo yarn install && node tests.js
+      - run: cd ui && sudo yarn install && npm run unit
   bff_test:
     docker:
       - image: circleci/node:8
@@ -21,7 +21,7 @@ jobs:
       - checkout
       - run: echo $NPMRC > bff/.npmrc
       - run: sudo npm install -g yarn
-      - run: cd bff && sudo yarn install && node tests.js
+      - run: cd bff && sudo yarn install && npm run unit
 workflows:
   version: 2
   run-tests:
