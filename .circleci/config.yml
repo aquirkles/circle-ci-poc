@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  ui_test:
+    docker:
+      - image: circleci/node:8
+
+    working_directory: ~/project
+
+    steps:
+      - checkout
+      - run: echo $NPMRC > ui/.npmrc
+      - run: sudo npm install -g yarn
+      - run: cd ui && sudo yarn install && node tests.js
+  bff_test:
+    docker:
+      - image: circleci/node:8
+
+    working_directory: ~/project
+
+    steps:
+      - checkout
+      - run: echo $NPMRC > bff/.npmrc
+      - run: sudo npm install -g yarn
+      - run: cd bff && sudo yarn install && node tests.js
+workflows:
+  version: 2
+  run-tests:
+    jobs:
+      - ui_test
+      - bff_test

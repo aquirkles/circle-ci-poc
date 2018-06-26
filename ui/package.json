@@ -1,0 +1,24 @@
+{
+  "name": "circle-ci",
+  "version": "1.0.0",
+  "private": true,
+  "license": "proprietary",
+  "description": "POC for circleci integration ui",
+  "author": "aquirkles",
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "@telusdigital/isomorphic-core": "^7.8.0",
+    "babel-preset-env": "^1.7.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.2.0",
+    "jest": "^23.0.0",
+    "regenerator-runtime": "^0.12.0"
+  },
+  "scripts": {
+    "unit": "jest"
+  }
+}
